@@ -17,6 +17,7 @@
 Код: [lesson3/03](lesson3/03)
 
 ![img_5.png](img_5.png)
+![img_7.png](img_7.png)
 
 ---
 ### Задание 4
