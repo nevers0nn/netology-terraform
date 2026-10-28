@@ -1,5 +1,3 @@
-###vm_web vars
-
 variable "vm_web_name" {
   type        = string
   default     = "netology-develop-platform-web"
@@ -20,8 +18,6 @@ variable "vm_web_resources" {
     core_fraction = 20
   }
 }
-
-###vm_db vars
 
 variable "default_zone_db" {
   type        = string

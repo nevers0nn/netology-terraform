@@ -1,5 +1,3 @@
-###vm_web vars
-
 variable "vm_web_name" {
   type        = string
   default     = "netology-develop-platform-web"
@@ -20,8 +18,6 @@ variable "vm_web_platform_id" {
 #     core_fraction = 20
 #   }
 # }
-
-###vm_db vars
 
 variable "default_zone_db" {
   type        = string
@@ -49,8 +45,6 @@ variable "vm_db_platform_id" {
 #     core_fraction = 20
 #   }
 # }
-
-###common vms vars
 
 variable "vms_resources" {
   description = "Map of resource configurations (cores, memory, disk) for all VMs"
