@@ -31,6 +31,18 @@ variable "vpc_name" {
   description = "VPC network&subnet name"
 }
 
+variable "preemptible" {
+  type        = string
+  default     = "true"
+  description = "Change VPC preemptible"
+}
+
+variable "vpc_nat" {
+  type        = string
+  default     = "true"
+  description = "VPC network&subnet name"
+}
+
 variable "vms_metadata" {
   description = "Common metadata for all VMs"
 
