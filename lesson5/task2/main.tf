@@ -30,7 +30,7 @@ module "analytics_vm" {
 
   env_name               = var.vpc_name
   instance_name          = var.vm_db_name
-  instance_count         = 2
+  instance_count         = 1
   network_id             = module.vpc_dev.subnet.network_id
   subnet_zones           = [module.vpc_dev.subnet.zone]
   subnet_ids             = [module.vpc_dev.subnet.id]
