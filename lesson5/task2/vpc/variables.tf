@@ -1,5 +1,5 @@
 variable "env_name" {
-  type = string
+  type        = string
   description = "network name"
 }
 
@@ -8,5 +8,5 @@ variable "zone" {
 }
 
 variable "cidr" {
-  type    = list(string)
+  type = list(string)
 }

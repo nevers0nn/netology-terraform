@@ -1,12 +1,12 @@
 module "vpc_dev" {
-  source = "./vpc"
+  source   = "./vpc"
   env_name = var.vpc_name
-  zone = var.default_zone
-  cidr = var.default_cidr
+  zone     = var.default_zone
+  cidr     = var.default_cidr
 }
 
 module "marketing_vm" {
-  source = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main"
+  source = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=a230c799304c20f15f0ad761ed704e46f534a821"
 
   env_name               = var.vpc_name
   instance_name          = var.vm_web_name
@@ -19,14 +19,15 @@ module "marketing_vm" {
   instance_memory        = var.vm_resources.memory
   instance_core_fraction = var.vm_resources.core_fraction
   boot_disk_size         = var.vm_resources.disk_size
-  public_ip              = true
+  public_ip              = false
+  security_group_ids     = [yandex_vpc_security_group.vm.id]
   preemptible            = true
   labels                 = { project = "marketing" }
   metadata               = local.common_metadata
 }
 
 module "analytics_vm" {
-  source = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=main"
+  source = "git::https://github.com/udjin10/yandex_compute_instance.git?ref=a230c799304c20f15f0ad761ed704e46f534a821"
 
   env_name               = var.vpc_name
   instance_name          = var.vm_db_name
@@ -39,7 +40,8 @@ module "analytics_vm" {
   instance_memory        = var.vm_resources.memory
   instance_core_fraction = var.vm_resources.core_fraction
   boot_disk_size         = var.vm_resources.disk_size
-  public_ip              = true
+  public_ip              = false
+  security_group_ids     = [yandex_vpc_security_group.vm.id]
   preemptible            = true
   labels                 = { project = "analytics" }
   metadata               = local.common_metadata

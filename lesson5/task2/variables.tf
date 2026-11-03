@@ -64,7 +64,12 @@ variable "vms_metadata" {
     ssh_user           = string
   })
   default = {
-    serial_port_enable = 1
+    serial_port_enable = 0
     ssh_user           = "ubuntu"
   }
+}
+
+variable "access_cidrs" {
+  type    = list(string)
+  default = ["10.0.1.0/24"]
 }

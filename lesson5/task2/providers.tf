@@ -7,9 +7,9 @@ terraform {
     profile                  = "default"
     region                   = "ru-central1"
 
-    bucket  = "terraform-data-adanilin"
-    key     = "dev/terraform.tfstate"
-    encrypt = false
+    bucket       = "terraform-data-adanilin"
+    key          = "dev/terraform.tfstate"
+    encrypt      = false
     use_lockfile = true
 
     skip_credentials_validation = true
@@ -23,8 +23,14 @@ terraform {
   }
 
   required_providers {
+    template = {
+      source  = "hashicorp/template"
+      version = "= 2.2.0"
+    }
+
     yandex = {
-      source = "yandex-cloud/yandex"
+      source  = "yandex-cloud/yandex"
+      version = "= 0.243.0"
     }
   }
 }
